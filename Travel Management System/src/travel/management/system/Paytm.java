@@ -10,8 +10,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Paytm extends JFrame{
+public class Paytm extends JFrame implements ActionListener{
     Paytm(){
+        setBounds(500,200,800,600);
         JEditorPane j = new JEditorPane();
         j.setEditable(false);   
 
@@ -23,24 +24,30 @@ public class Paytm extends JFrame{
         } 
 
         JScrollPane scrollPane = new JScrollPane(j);     
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().add(scrollPane);
-        setPreferredSize(new Dimension(800,600));
+        //setPreferredSize(new Dimension(800,600));
         
         JButton back=new JButton("Back");
-        back.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-            }
-        });
         back.setBounds(610, 20, 80, 40);
+        back.addActionListener(this); 
         j.add(back);
         
         setSize(800,600);
         setLocation(600,220);
         setVisible(true);
     }
+    public void actionPerformed(ActionEvent e) 
+            {
+                setVisible(false);
+                new Payment();
+            }
     public static void main(String[] args){
-        new Paytm().setVisible(true);
+        new Paytm();
     }
+
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
 }

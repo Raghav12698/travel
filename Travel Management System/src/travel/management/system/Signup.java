@@ -126,9 +126,9 @@ public class Signup extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent ae){
         try{
             Conn con = new Conn();
-            
+           
             if(ae.getSource() == b1){
-                String sql = "insert into account(username, name, password, question, answer) values(?, ?, ?, ?, ?)";
+                String sql = "insert into account (username, name, password, security, answer) values(?, ?, ?, ?, ?)";
 		PreparedStatement st = con.c.prepareStatement(sql);
 
 		st.setString(1, textField.getText());

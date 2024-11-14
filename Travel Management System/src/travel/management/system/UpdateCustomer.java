@@ -176,7 +176,7 @@ public class UpdateCustomer extends JFrame {
                                 String s8 =  t8.getText();
                                 String s9 = t9.getText(); 
                                 
-                                String q1 = "update customer set id_type = '"+s2+"', number = '"+s3+"', name = '"+s4+"', gender = '"+s5+"', country = '"+s6+"', address = '"+s7+"', phone = '"+s8+"', email = '"+s9+"' where username = '"+s1+"'";
+                                String q1 = "update customer set id = '"+s2+"', number = '"+s3+"', name = '"+s4+"', gender = '"+s5+"', country = '"+s6+"', adress = '"+s7+"', phone = '"+s8+"', email = '"+s9+"' where username = '"+s1+"'";
                                 c.s.executeUpdate(q1);
                                 
 	    			JOptionPane.showMessageDialog(null, "Customer Detail Updated Successfully");

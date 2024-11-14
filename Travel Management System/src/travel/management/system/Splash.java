@@ -11,8 +11,8 @@ public class Splash {
         int i;
         int x=1;
         for(i=2; i<=600; i+=10, x+=7){
-            f1.setLocation(900 - ((i+x)/2), 500 - (i/2));
-            f1.setSize(i+x,i);
+            f1.setLocation(100,100);
+            f1.setSize(1200,600);
             try{
                 Thread.sleep(10);
             }catch(Exception e){}
@@ -24,8 +24,8 @@ class SplashFrame extends JFrame implements Runnable{
     Thread t1;
     SplashFrame(){
         setLayout(new FlowLayout());
-        ImageIcon c1 = new ImageIcon(ClassLoader.getSystemResource("Travel/Management/System/icons/splash.jpg"));
-        Image i1 = c1.getImage().getScaledInstance(1030, 750,Image.SCALE_DEFAULT);
+        ImageIcon c1 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/splash.jpg"));
+        Image i1 = c1.getImage().getScaledInstance(1200, 600,Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i1);
         
         JLabel l1 = new JLabel(i2);

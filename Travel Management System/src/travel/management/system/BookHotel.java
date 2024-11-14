@@ -29,7 +29,7 @@ public class BookHotel extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BookHotel frame = new BookHotel("");
+					BookHotel frame = new BookHotel("tarun12");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +43,7 @@ public class BookHotel extends JFrame {
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-                
+                    
                 ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/book.jpg"));
                 Image i3 = i1.getImage().getScaledInstance(500, 300,Image.SCALE_DEFAULT);
                 ImageIcon i2 = new ImageIcon(i3);
@@ -72,7 +72,7 @@ public class BookHotel extends JFrame {
                 Conn c = new Conn();
                 try{
 
-                    ResultSet rs = c.s.executeQuery("select * from hotels");
+                    ResultSet rs = c.s.executeQuery("select * from hotel");
                     while(rs.next()){
                         c1.add(rs.getString("name"));
                     }
@@ -162,7 +162,7 @@ public class BookHotel extends JFrame {
 
                     ResultSet rs = c.s.executeQuery("select * from customer where username = '"+username+"'");
                     while(rs.next()){
-                        l2.setText(rs.getString("id_type"));
+                        l2.setText(rs.getString("id"));
                         l3.setText(rs.getString("number"));
                         l4.setText(rs.getString("phone"));
                         
@@ -179,13 +179,13 @@ public class BookHotel extends JFrame {
                             try{
 	    			String s1 = c1.getSelectedItem(); 
                                 
-                                String q1 = "select * from hotels where name = '"+c1.getSelectedItem()+"'";
+                                String q1 = "select * from hotel where name = '"+c1.getSelectedItem()+"'";
                                 ResultSet rs = c.s.executeQuery(q1);
                                 if(rs.next()){
                                     
-                                    int cost = Integer.parseInt(rs.getString("cost_per_day"));
-                                    int food = Integer.parseInt(rs.getString("food_charges"));
-                                    int ac = Integer.parseInt(rs.getString("ac_charges"));
+                                    int cost = Integer.parseInt(rs.getString("costperperson"));
+                                    int food = Integer.parseInt(rs.getString("foodincluded"));
+                                    int ac = Integer.parseInt(rs.getString("acroom"));
                                     
                                     int persons = Integer.parseInt(t1.getText());
                                     int days = Integer.parseInt(t2.getText());
